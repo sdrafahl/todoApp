@@ -21,4 +21,11 @@ public class GreetingController {
     public TodoList getTodoList() {
         return new TodoList();
     }
+
+    @RequestMapping("/removeTodoList")
+    public TodoList removeTodoList(@RequestParam(value="todo") String todo) {
+        TodoList todoList = new TodoList();
+        todoList.eliminateTodo(todo);
+        return todoList;
+    }
 }
