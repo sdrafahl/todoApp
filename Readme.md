@@ -7,4 +7,4 @@ You need to use gradle
 
 ## To Access
 
-http://localhost:8080/<api>
+http://localhost:8080/
