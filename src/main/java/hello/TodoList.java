@@ -26,9 +26,8 @@ public class TodoList {
         return this.todos;
     }
 
-    public void eliminateTodo(String todo) {
+    private void writeToFile() {
         try {
-            this.todos.remove(todo);
             PrintWriter writer = new PrintWriter(this.file, "UTF-8");
             this.todos.forEach((todoString) -> writer.println(todoString));
             writer.close();
@@ -36,4 +35,15 @@ public class TodoList {
             System.out.println(e.toString());
         }
     }
+
+    public void eliminateTodo(String todo) {
+        this.todos.remove(todo);
+        writeToFile();
+    }
+
+    public void addTodo(String todo) {
+        this.todos.add(todo);
+        writeToFile();
+    }
+
 }
